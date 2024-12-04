@@ -1,19 +1,22 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-size: 32px;
 }
+
 .v1_2 {
   width: 686px;
   height: 404px;
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
   opacity: 1;
   position: relative;
   top: 0px;
   left: 0px;
-  overflow: hidden;
+  overflow: visible; /* Adjust overflow */
 }
+
 .v1_6 {
   width: 134px;
   height: 137px;
@@ -27,6 +30,7 @@ body {
   left: 310px;
   overflow: hidden;
 }
+
 .v1_4 {
   width: 134px;
   height: 137px;
@@ -44,7 +48,7 @@ body {
 
 .v11_2 {
   width: 292px;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 28px;
   left: 51px;
@@ -54,6 +58,7 @@ body {
   opacity: 1;
   text-align: left;
 }
+
 .v11_4 {
   width: 198px;
   height: 209px;
@@ -66,9 +71,8 @@ body {
   top: 124px;
   left: 70px;
   overflow: visible;
+  border: 2px solid red; /* Temporary border to see the element */
 }
-
-
 
 @keyframes spin {
   from {
@@ -79,13 +83,11 @@ body {
   }
 }
 
-/* Align content centrally on the page */
 body > div,
 body > span {
   text-align: center;
 }
 
-/* Ensure animation stops when paused */
 .record[style*="none"] {
   animation: none;
 }
