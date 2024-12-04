@@ -3,55 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Jazz Music Vinyl</title>
-    <!-- External Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Jaro&display=swap" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #fff;
-            font-family: 'Jaro', sans-serif;
-        }
-        .v1_2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .record {
-            cursor: pointer;
-            width: 200px;
-            transition: transform 0.2s;
-        }
-        .record:hover {
-            transform: scale(1.1); /* Adds a hover effect */
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Jaro&display=swap" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Figma Jazz Music</title>
 </head>
 <body>
-    <!-- Header Section -->
     <div class="v1_2">
+        <div class="v1_6">
+            <div class="v1_4"></div>
+        </div>
         <span class="v11_2">Figma Jazz Music</span>
+        <div class="v11_4"></div>
     </div>
 
-    <!-- Vinyl Record Interactive Section -->
-    <img src="images/v1_4.png" alt="Vinyl Record" class="record" id="record">
-    <audio id="music" src="music.mp3"></audio>
+    <!-- Vinyl Record and Music -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="./images/vinyl-record.png" alt="Vinyl Record" class="record" id="record" style="cursor: pointer; width: 200px;">
+        <audio id="music" src="music.mp3"></audio>
+    </div>
 
-    <!-- Script for Interactive Functionality -->
     <script>
         const record = document.getElementById('record');
         const music = document.getElementById('music');
 
-        // Add event listener to toggle play and pause
         record.addEventListener('click', () => {
             if (music.paused) {
                 music.play();
+                record.style.animation = "spin 2s linear infinite";
             } else {
                 music.pause();
+                record.style.animation = "none";
             }
         });
     </script>
