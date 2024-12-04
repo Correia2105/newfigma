@@ -1,2 +1,61 @@
-<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css?family=Jaro&display=swap" rel="stylesheet" /><link href="./css/main.css" rel="stylesheet" /><title>Document</title></head><body><div class="v1_2"><div class="v1_6"><div class="v1_4"></div></div><span class="v11_2">Figma Jazz Music
-</span><div class="v11_4"></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Jazz Music Vinyl</title>
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Jaro&display=swap" rel="stylesheet">
+    <!-- External Stylesheet -->
+    <link href="./css/main.css" rel="stylesheet">
+    <!-- Inline Styles -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+            font-family: 'Jaro', sans-serif;
+        }
+        .v1_2 {
+            text-align: center;
+        }
+        .record {
+            cursor: pointer;
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="v1_2">
+        <div class="v1_6">
+            <div class="v1_4"></div>
+        </div>
+        <span class="v11_2">Figma Jazz Music</span>
+        <div class="v11_4"></div>
+    </div>
+
+    <!-- Vinyl Record Interactive Section -->
+    <img src="vinyl-record.png" alt="Vinyl Record" class="record" id="record">
+    <audio id="music" src="music.mp3"></audio>
+
+    <!-- Script for Interactive Functionality -->
+    <script>
+        const record = document.getElementById('record');
+        const music = document.getElementById('music');
+
+        record.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        });
+    </script>
+</body>
+</html>
