@@ -6,9 +6,6 @@
     <title>Interactive Jazz Music Vinyl</title>
     <!-- External Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Jaro&display=swap" rel="stylesheet">
-    <!-- External Stylesheet -->
-    <link href="./css/main.css" rel="stylesheet">
-    <!-- Inline Styles -->
     <style>
         body {
             display: flex;
@@ -22,22 +19,22 @@
         }
         .v1_2 {
             text-align: center;
+            margin-bottom: 20px;
         }
         .record {
             cursor: pointer;
             width: 200px;
-            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .record:hover {
+            transform: scale(1.1); /* Adds a hover effect */
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <div class="v1_2">
-        <div class="v1_6">
-            <div class="v1_4"></div>
-        </div>
         <span class="v11_2">Figma Jazz Music</span>
-        <div class="v11_4"></div>
     </div>
 
     <!-- Vinyl Record Interactive Section -->
@@ -49,6 +46,7 @@
         const record = document.getElementById('record');
         const music = document.getElementById('music');
 
+        // Add event listener to toggle play and pause
         record.addEventListener('click', () => {
             if (music.paused) {
                 music.play();
