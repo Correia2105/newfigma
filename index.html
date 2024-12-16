@@ -4,132 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Jaro&display=swap" rel="stylesheet" />
-    <style>
-       * {
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 32px;
-}
-
-.v1_2 {
-  width: 686px;
-  height: 404px;
-  background: rgba(255, 255, 255, 1);
-  opacity: 1;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  overflow: visible; /* Adjust overflow */
-}
-
-.v1_6 {
-  width: 134px;
-  height: 137px;
-  background: url("images/v1_6.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 124px;
-  left: 310px;
-  overflow: hidden;
-}
-
-.v1_4 {
-  width: 134px;
-  height: 137px;
-  background: url("images/v1_4.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-}
-
-.v11_2 {
-  width: 292px;
-  color: rgba(0, 0, 0, 1);
-  position: absolute;
-  top: 28px;
-  left: 51px;
-  font-family: Jaro;
-  font-weight: Regular;
-  font-size: 40px;
-  opacity: 1;
-  text-align: left;
-}
-
-.v11_4 {
-  width: 100px;  /* Smaller width */
-  height: 105px; /* Smaller height */
-  background: url("images/v11_4.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 250px;
-  left: 70px;
-  overflow: visible;
-  border: 10px solid red; /* Temporary border to see the element */
-}
-
-
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-body > div,
-body > span {
-  text-align: center;
-}
-
-.record[style*="none"] {
-  animation: none;
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <title>Figma Jazz Music</title>
 </head>
 <body>
-    <div class="v1_2">
-        <span class="v11_2">Figma Jazz Music</span>
-    </div>
+<!-- Main Container -->
+<div class="v1_2">
+    <span class="v11_2">Figma Jazz Music</span>
+</div>
 
-     <div>
-        <img src="images/v11_4.png" alt="Jazz" class="jazz" id="jazz">
-    </div>
+<!-- Jazz Image -->
+<div class="image-container">
+    <img src="images/v11_4.png" alt="Jazz" class="v11_4" id="jazz">
+</div>
 
-    <!-- Vinyl Record and Music -->
-    <div style="text-align: center; center: 20px;">
-        <img src="images/v1_4.png" alt="Vinyl Record" class="record" id="record" style="cursor: pointer; width: 200px;">
-        <audio id="music" src="music.mp3"></audio>
-    </div>
+<!-- Vinyl Record and Music -->
+<div class="record-container">
+    <img src="images/v1_4.png" alt="Vinyl Record" class="v1_4" id="record" style="cursor: pointer;">
+    <audio id="music" src="music.mp3"></audio>
+</div>
 
-    <script>
-        const record = document.getElementById('record');
-        const music = document.getElementById('music');
+<script>
+    const record = document.getElementById('record');
+    const music = document.getElementById('music');
 
-        record.addEventListener('click', () => {
-            if (music.paused) {
-                music.play();
-                record.style.animation = "spin 2s linear infinite";
-            } else {
-                music.pause();
-                record.style.animation = "none";
-            }
-        });
-    </script>
+    record.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            record.style.animation = "spin 2s linear infinite";
+        } else {
+            music.pause();
+            record.style.animation = "none";
+        }
+    });
+</script>
 </body>
 </html>
