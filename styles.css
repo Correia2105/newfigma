@@ -1,0 +1,67 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 32px;
+  font-family: Jaro, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+/* Main Container */
+.v1_2 {
+  width: 686px;
+  height: 404px;
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.v11_2 {
+  color: rgba(0, 0, 0, 1);
+  font-size: 40px;
+  text-align: left;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Jazz Image */
+.v11_4 {
+  width: 500px;
+  height: 500px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 400px; /* Adjust vertical position */
+  left: 100px; /* Adjust horizontal position */
+}
+
+/* Record and Music */
+.record-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.v1_4 {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
